@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<script src="https://kit.fontawesome.com/a49c106287.js" crossorigin="anonymous"></script>
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+</head>
+ <body>
+ 	<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top pb-0 main-nav" id="mainNavbar">
+	  	<a class="navbar-brand bg-gradient-light inline-center pb-1" href="#">					
+	  		<img src="assets/img/house.svg" class="base-icon" alt="">	
+	  		<h4 class="mb-0">
+				Quinta Do Pinheiro
+			</h4>
+	  	</a>	
+		<button class="navbar-toggler mb-1" type="button" data-toggle="collapse" data-target="#mainNavbarText" 
+			aria-controls="mainNavbarText" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="mainNavbarText">
+			<ul class="navbar-nav mr-auto" id="mainNavbarOptions">
+			  <li class="nav-item active">
+			    <a class="nav-link" href="#pool" id='pool-sel' data-toggle="collapse" data-target=".navbar-collapse.show">Piscina</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#fields" id='fields-sel' data-toggle="collapse" data-target=".navbar-collapse.show">Terrenos</a>
+			  </li>
+			</ul>
+		</div>
+	</nav>
+	<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top pb-0 second-nav" id="poolNavbar">
+	  <a class="navbar-brand bg-gradient-light inline-center pb-1" href="#pool"><i class="fas fa-swimming-pool"></i>	<h3 class="mb-0">
+			PISCINA
+		</h3></a>
+	  <button class="navbar-toggler mb-1" type="button" data-toggle="collapse" data-target="#poolNavbarText" aria-controls="poolNavbarText" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="poolNavbarText">
+	    <ul class="navbar-nav mr-auto" id="poolNavbarOptions">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#automatico" data-toggle="collapse" data-target=".navbar-collapse.show">Automático</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#aspirador" data-toggle="collapse" data-target=".navbar-collapse.show">Aspirador</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#encher" data-toggle="collapse" data-target=".navbar-collapse.show">Encher</a>
+	      </li>
+	    </ul>
+<!-- 	    <span class="navbar-text d-none d-sm-block">
+	      Quinta Do Pinheiro
+	    </span> -->
+	  </div>
+	</nav>
+	<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top pb-0 second-nav no-display" id="fieldsNavbar">
+	  <a class="navbar-brand bg-gradient-light inline-center pb-1" href="#fields">
+		<img src="assets/img/field.svg" class="base-icon" alt="">	
+
+	  	<h3 class="mb-0">
+			TERRENOS
+		</h3>
+	</a>
+	  <button class="navbar-toggler mb-1" type="button" data-toggle="collapse" data-target="#fieldsNavbarText" aria-controls="fieldsNavbarText" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="fieldsNavbarText">
+	    <ul class="navbar-nav mr-auto" id="fieldsNavbarOptions">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#mapa-sec" data-toggle="collapse" data-target=".navbar-collapse.show">Mapa</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#outro" data-toggle="collapse" data-target=".navbar-collapse.show">Outro</a>
+	      </li>
+	    </ul>
+<!-- 	    <span class="navbar-text d-none d-sm-block">
+	      Quinta Do Pinheiro
+	    </span> -->
+	  </div>
+	</nav>
+ 	<div class="container-fluid">
+ 		<div id="pool">
+	 		<div class="row mb-3">
+	 			<div class="col-md-3 col-lg-4 d-none d-md-block">
+	 				<hr />	
+	 			</div>
+	 			<div class="col-md-6 col-lg-4 text-center">
+				<h3 class="text-muted">
+					Instruções de Utilização
+				</h3>
+	 			</div>
+				<div class="col-md-3 col-lg-4 d-none d-md-block">
+	 				<hr />	
+	 			</div>
+			</div>
+	 				<hr class="d-block d-md-none" />	
+	 		<section id="automatico" >
+				<div class="content">
+					<div class="header inline-left align-bottom">
+						<h4 class="mr-2">AUTOMÁTICO</h4>	
+						<small class=" text-muted align-text-bottom"> Como activar o sistema automático</small>
+					</div>
+					<div class="row">
+						<div class="col-6">
+						<ul>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+						</ul>	
+						</div>
+						<div class="col-6">
+							<img src="assets/img/teste.jpg" class="img-fluid" alt="Responsive image">	
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="aspirador" >
+				<div class="content">
+					<div class="header inline-left align-bottom">
+						<h4 class="mr-2">ASPIRADOR</h4>	
+						<small class=" text-muted align-text-bottom"> Como activar o sistema automático</small>
+					</div>
+					<div class="row">
+						<div class="col-6">
+						<ul>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+						</ul>	
+						</div>
+						<div class="col-6">
+							<img src="assets/img/teste.jpg" class="img-fluid" alt="Responsive image">	
+						</div>
+					</div>
+				</div>
+			</section>
+			<section  id="encher">
+
+				<div class="content">
+					<div class="header inline-left align-bottom">
+						<h4 class="mr-2">ENCHER</h4>	
+						<small class=" text-muted align-text-bottom"> Como activar o sistema automático</small>
+					</div>
+					<div class="row">
+						<div class="col-6">
+						<ul>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+							<li>Abrir Torneira</li>
+						</ul>	
+						</div>
+						<div class="col-6">
+							<img src="assets/img/teste.jpg" class="img-fluid" alt="Responsive image">	
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+ 		<div id="fields">
+ 			Terrenos... TODO
+			<div class="content">
+				<div class="header inline-left align-bottom">
+					<h4 class="mr-2">Mapa</h4>	
+					<small class=" text-muted align-text-bottom"> Terrenos e descrição</small>
+				</div>
+				<div class="row">
+					<div class="col-6">
+	
+						<div class="accordion" id="accordionExample">
+						  <div class="card">
+						    <div class="card-header" id="headingOne">
+						      <h5 class="mb-0">
+						        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						          Casa
+						        </button>
+						      </h5>
+						    </div>
+
+						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+						      <div class="card-body">
+						        Coisas sobre a casa
+						      </div>
+						    </div>
+						  </div>
+						  <div class="card">
+						    <div class="card-header" id="headingTwo">
+						      <h5 class="mb-0">
+						        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						          Vinha
+						        </button>
+						      </h5>
+						    </div>
+						    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+						      <div class="card-body">
+						   		Coisas sobre a vinha
+						      </div>
+						    </div>
+						  </div>
+						  <div class="card">
+						    <div class="card-header" id="headingThree">
+						      <h5 class="mb-0">
+						        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						          Mijados
+						        </button>
+						      </h5>
+						    </div>
+						    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+						      <div class="card-body">
+						        Coisas sobre os mijados
+						      </div>
+						    </div>
+						  </div>
+						</div>
+					
+					</div>	
+
+					<div class="col-6">
+						<div id="mainMap"></div>
+					</div>
+				</div>	
+			</div>
+		</div>
+
+	</div>
+
+
+	<script
+  		src="https://code.jquery.com/jquery-3.5.1.js"
+  		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  		crossorigin="anonymous">		
+	</script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/js/shapes/shapes.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/map.js"></script>
+
+  </body>
+</html>

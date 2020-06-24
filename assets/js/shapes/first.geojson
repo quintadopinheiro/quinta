@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Untitled Project",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "aaa", "description": null }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -7.274286762216794, 40.196997137927021 ], [ -7.516907558804756, 40.66558413385453 ], [ -8.356995006543533, 40.449274298781503 ], [ -7.852202977938458, 40.021952352262289 ], [ -7.274286762216794, 40.196997137927021 ] ] ] } }
+]
+}
